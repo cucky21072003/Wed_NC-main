@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<IVYmodaONLINE.Models.EF.Productcategory>
+
+@if (Model != null && Model.Any())
+{
+    <div class="text-center">
+        <div class="section_title new_arrivals_title">
+            <h2>New Arrivals</h2>
+        </div>
+    </div>
+
+    <!-- banner 1 -->
+    <div class="new_arrivals_sorting">
+        <ul class="arrivals_grid_sorting ">
+            <li class="grid_sorting_button active is-checked" data-filter="*"><a href="#">All</a> </li>
+            @foreach (var item in Model)
+            {
+                <li class="grid_sorting_button " data-filter=".women"><a href="#">Women's</a></li>
+            }
+            <!--
+                    <li class="grid_sorting_button active is-checked" data-filter="*"><a href="#">All</a> </li>
+                    <li class="grid_sorting_button " data-filter=".women"><a href="#">Women's</a></li>
+                    <li class="grid_sorting_button " data-filter=".accessories"><a href="#">Accessories</a></li>
+                    <li class="grid_sorting_button " data-filter=".men"><a href="#">Men's</a></li>
+                </ul>
+            </div>
+            <!-- -->
+
+            <div class="row">
+                <div class="col">
+                    <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+                        @Html.Action("Partial_ItemsByCateId", "Product")
+                        <!-- Product 1 -->
+
+                   
+                    </div>
+                </div>
+            </div>
+        </ul>
+    </div>
+
+}
+
